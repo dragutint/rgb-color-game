@@ -1,6 +1,5 @@
 * {
-  font-family: 'Noto Sans', sans-serif;
-  
+  font-family: "Noto Sans", sans-serif;
 }
 
 body {
@@ -8,7 +7,7 @@ body {
   margin: 0;
 }
 
-h1{
+h1 {
   text-align: center;
   color: white;
   line-height: 1.1;
@@ -37,7 +36,7 @@ button:hover {
   border: none;
 }
 
-.naslov{
+.naslov {
   background-color: #0043af;
 }
 
@@ -46,7 +45,7 @@ button:hover {
   color: white;
 }
 
-#menu{
+#menu {
   text-align: center;
   height: 30px;
   background-color: white;
@@ -66,7 +65,7 @@ button:hover {
   position: fixed;
 }
 
-#message{
+#message {
   display: inline-block;
   width: 20%;
 }
