@@ -41,7 +41,9 @@
         <span class="bar-item" id="message"></span>
 
         <span class="bar-item">SCORE:</span>
-        <span class="bar-item" id="clickCounter"></span>
+        <span class="bar-item" id="scoreCounter"></span>
+        <span class="bar-item">ROUND:</span>
+        <span class="bar-item" id="roundCounter"></span>
     </div>
 
     <div id="container">

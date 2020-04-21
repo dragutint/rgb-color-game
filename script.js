@@ -1,7 +1,7 @@
 var colors = generateRandomColors(6);
 var pickedColor;
 var isHard = false;
-var timesPlayed = 0;
+var round = 0;
 var score = 0;
 var sec = 0;
 var interval;
@@ -64,9 +64,12 @@ function calcSpeed(prev, next) {
 }
 
 function startGame() {
+  $("#scoreCounter").html(0);
+  $("#roundCounter").html(1);
+
   sec = 0;
   score = 0;
-  timesPlayed = 0;
+  round = 0;
 
   showSquares();
   newColors();
@@ -108,14 +111,15 @@ function addEventListenersToSquares() {
           clickedColor.replace(/\s/g, "") === pickedColor.replace(/\s/g, "")
         ) {
           message.html("Correct!");
-          timesPlayed++;
+          round++;
           score += 30;
-          $("#clickCounter").html(score);
+          $("#scoreCounter").html(score);
+          $("#roundCounter").html(round + 1);
 
           changeSquareColors(pickedColor);
           h1.css("background-color", pickedColor);
 
-          if (timesPlayed == 3) {
+          if (round == 3) {
             endGame();
           } else {
             newColors();
@@ -170,7 +174,7 @@ function endGame() {
 
       score = 0;
       sec = 0;
-      timesPlayed = 0;
+      round = 0;
       clearInterval(interval);
     },
   });
