@@ -7,6 +7,9 @@
       rel="stylesheet"
     />
     <title>Color game</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <link
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
@@ -29,8 +32,6 @@
       integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -54,6 +55,7 @@
       <span id="message"></span>
       <span class="bar-item"><i class="fa fa-user"></i></span>
       <input
+        id="nameInput"
         class="form bar-item"
         type="text"
         placeholder="Type your name..."
@@ -72,6 +74,16 @@
       >
         PLAY!
       </button>
+    </div>
+
+    <div class="bar d-none" id="play-bar">
+      <span class="bar-item">
+        <span id="minutes">00</span>:<span id="seconds">00</span>
+      </span>
+      <span class="bar-item" id="message"></span>
+
+      <span class="bar-item">SCORE:</span>
+      <span class="bar-item" id="clickCounter"></span>
     </div>
 
     <div id="container">

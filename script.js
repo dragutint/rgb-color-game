@@ -1,6 +1,9 @@
 var colors = generateRandomColors(6);
 var pickedColor;
 var isHard = false;
+var timesPlayed = 0;
+var score = 0;
+var sec = 0;
 
 var squares = $(".square");
 var message = $("#message");
@@ -9,6 +12,8 @@ var h1 = $("h1");
 var btnPlay = $("#btnPlay");
 var easyButton = $("#easy");
 var hardButton = $("#hard");
+var playBar = $("#play-bar");
+var menuBar = $("#menu-bar");
 
 easyButton.addClass("selected");
 
@@ -16,8 +21,11 @@ $(document).ready(function () {
   squares.each(animateDiv);
 });
 
+function pad(val) {
+  return val > 9 ? val : "0" + val;
+}
+
 function makeNewPosition() {
-  // Get viewport dimensions (remove the dimension of the div)
   var h = $(window).height() - 50;
   var w = $(window).width() - 50;
 
@@ -55,27 +63,24 @@ function calcSpeed(prev, next) {
 }
 
 function startGame() {
+  showSquares();
+  newColors();
+  message.html("");
+
+  addEventListenersToSquares();
+  toggleBars();
+
+  setInterval(function () {
+    $("#seconds").html(pad(++sec % 60));
+    $("#minutes").html(pad(parseInt(sec / 60, 10)));
+  }, 1000);
+}
+
+function newColors() {
   if (isHard) {
     colors = generateRandomColors(6);
   } else {
     colors = generateRandomColors(3);
-  }
-
-  for (var i = 0; i < squares.length; i++) {
-    $(squares[i]).click(function () {
-      var clickedColor = this.style.backgroundColor;
-
-      if (clickedColor.replace(/\s/g, "") === pickedColor.replace(/\s/g, "")) {
-        message.html("Correct!");
-        changeSquareColors(pickedColor);
-        h1.css("background-color", pickedColor);
-        btnPlay.text("PLAY AGAIN?");
-      } else {
-        this.style.background = "#232323";
-
-        message.html("Try again!");
-      }
-    });
   }
 
   for (var i = 0; i < colors.length; i++) {
@@ -85,7 +90,76 @@ function startGame() {
     "background-color"
   );
   colorDisplay.html(pickedColor);
-  message.html("");
+}
+
+function addEventListenersToSquares() {
+  for (var i = 0; i < squares.length; i++) {
+    $(squares[i]).click(function () {
+      var clickedColor = this.style.backgroundColor;
+
+      if (clickedColor.replace(/\s/g, "") === pickedColor.replace(/\s/g, "")) {
+        message.html("Correct!");
+        timesPlayed++;
+        score += 30;
+        $("#clickCounter").html(score);
+
+        changeSquareColors(pickedColor);
+        h1.css("background-color", pickedColor);
+
+        if (timesPlayed == 3) {
+          endGame();
+        } else {
+          newColors();
+        }
+      } else {
+        this.style.background = "#232323";
+        score -= 5;
+        $("#clickCounter").html(score);
+        message.html("Try again!");
+      }
+    });
+  }
+}
+
+function toggleBars() {
+  $(playBar).toggleClass("d-none");
+  $(menuBar).toggleClass("d-none");
+}
+
+function hideSquares() {
+  for (var i = 0; i < 6; i++) {
+    $(squares[i]).addClass("d-none");
+  }
+}
+
+function showSquares() {
+  for (var i = 0; i < 6; i++) {
+    $(squares[i]).removeClass("d-none");
+  }
+}
+
+function endGame() {
+  var name = $("#nameInput").val();
+
+  toggleBars();
+  hideSquares();
+
+  $.ajax({
+    url: "backend/newScore.php",
+    type: "POST",
+    data: {
+      name: name,
+      score: score - sec,
+    },
+    success: function (data) {
+      Swal.fire({
+        title: "You finished, " + name,
+        text: data + "\n" + "Your score: " + (score - sec),
+        icon: "success",
+        confirmButtonText: "Cool",
+      });
+    },
+  });
 }
 
 function changeSquareColors(color) {
@@ -118,13 +192,11 @@ function generateRandomColors(num) {
 btnPlay.click(function () {
   h1.css("background-color", "steelblue");
   startGame();
-  $(this).addClass("d-none");
 });
 
 easyButton.click(function () {
   if (isHard) {
     isHard = false;
-    // newColors();
     // $(squares[3]).css("background-color", "#232323");
     // $(squares[4]).css("background-color", "#232323");
     // $(squares[5]).css("background-color", "#232323");
@@ -137,7 +209,6 @@ easyButton.click(function () {
 hardButton.click(function () {
   if (!isHard) {
     isHard = true;
-    // newColors();
     easyButton.toggleClass("selected");
     this.classList.toggle("selected");
   }
