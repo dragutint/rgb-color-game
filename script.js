@@ -13,8 +13,9 @@ var hardButton = $("#hard");
 easyButton.addClass("selected");
 
 newColors();
+
 $(document).ready(function () {
-  $(".square").each(animateDiv);
+  squares.each(animateDiv);
 });
 
 function makeNewPosition() {
