@@ -6,13 +6,11 @@ var squares = $(".square");
 var message = $("#message");
 var colorDisplay = $("#colorDisplay");
 var h1 = $("h1");
-var newColorsButton = $("#newColors");
+var btnPlay = $("#btnPlay");
 var easyButton = $("#easy");
 var hardButton = $("#hard");
 
 easyButton.addClass("selected");
-
-newColors();
 
 $(document).ready(function () {
   squares.each(animateDiv);
@@ -56,7 +54,7 @@ function calcSpeed(prev, next) {
   return speed;
 }
 
-function newColors() {
+function startGame() {
   if (isHard) {
     colors = generateRandomColors(6);
   } else {
@@ -71,7 +69,7 @@ function newColors() {
         message.html("Correct!");
         changeSquareColors(pickedColor);
         h1.css("background-color", pickedColor);
-        newColorsButton.text("PLAY AGAIN?");
+        btnPlay.text("PLAY AGAIN?");
       } else {
         this.style.background = "#232323";
 
@@ -117,19 +115,19 @@ function generateRandomColors(num) {
   return colors;
 }
 
-newColorsButton.click(function () {
+btnPlay.click(function () {
   h1.css("background-color", "steelblue");
-  newColors();
-  this.textContent = "NEW COLORS";
+  startGame();
+  $(this).addClass("d-none");
 });
 
 easyButton.click(function () {
   if (isHard) {
     isHard = false;
-    newColors();
-    $(squares[3]).css("background-color", "#232323");
-    $(squares[4]).css("background-color", "#232323");
-    $(squares[5]).css("background-color", "#232323");
+    // newColors();
+    // $(squares[3]).css("background-color", "#232323");
+    // $(squares[4]).css("background-color", "#232323");
+    // $(squares[5]).css("background-color", "#232323");
 
     this.classList.toggle("selected");
     hardButton.toggleClass("selected");
@@ -139,7 +137,7 @@ easyButton.click(function () {
 hardButton.click(function () {
   if (!isHard) {
     isHard = true;
-    newColors();
+    // newColors();
     easyButton.toggleClass("selected");
     this.classList.toggle("selected");
   }
