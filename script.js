@@ -3,14 +3,14 @@ var pickedColor;
 var isHard = false;
 
 var squares = document.querySelectorAll(".square");
-var message = document.querySelector("#message");
-var colorDisplay = document.getElementById("colorDisplay");
-var h1 = document.querySelector("h1");
-var newColorsButton = document.querySelector("#newColors");
-var easyButton = document.querySelector("#easy");
-var hardButton = document.querySelector("#hard");
+var message = $("#message");
+var colorDisplay = $("#colorDisplay");
+var h1 = $("h1");
+var newColorsButton = $("#newColors");
+var easyButton = $("#easy");
+var hardButton = $("#hard");
 
-easyButton.classList.add("selected");
+easyButton.addClass("selected");
 
 newColors();
 $(document).ready(function () {
@@ -67,14 +67,14 @@ function newColors() {
       var clickedColor = this.style.backgroundColor;
 
       if (clickedColor.replace(/\s/g, "") === pickedColor.replace(/\s/g, "")) {
-        message.textContent = "Correct!";
+        message.html("Correct!");
         changeSquareColors(pickedColor);
-        h1.style.backgroundColor = pickedColor;
-        newColorsButton.textContent = "PLAY AGAIN?";
+        h1.css("background-color", pickedColor);
+        newColorsButton.text("PLAY AGAIN?");
       } else {
         this.style.background = "#232323";
 
-        message.textContent = "Try again!";
+        message.html("Try again!");
       }
     });
   }
@@ -84,8 +84,8 @@ function newColors() {
   }
   pickedColor =
     squares[randomNumber(0, colors.length - 1)].style.backgroundColor;
-  colorDisplay.textContent = pickedColor;
-  message.textContent = "";
+  colorDisplay.html(pickedColor);
+  message.html("");
 }
 
 function changeSquareColors(color) {
@@ -115,28 +115,28 @@ function generateRandomColors(num) {
   return colors;
 }
 
-newColorsButton.addEventListener("click", function () {
-  h1.style.backgroundColor = "steelblue";
+newColorsButton.click(function () {
+  h1.css("background-color", "steelblue");
   newColors();
   this.textContent = "NEW COLORS";
 });
 
-easyButton.addEventListener("click", function () {
+easyButton.click(function () {
   if (isHard) {
     isHard = false;
     newColors();
     squares[3].style.backgroundColor = squares[4].style.backgroundColor = squares[5].style.backgroundColor =
       "#232323";
     this.classList.toggle("selected");
-    hardButton.classList.toggle("selected");
+    hardButton.toggleClass("selected");
   }
 });
 
-hardButton.addEventListener("click", function () {
+hardButton.click(function () {
   if (!isHard) {
     isHard = true;
     newColors();
-    easyButton.classList.toggle("selected");
+    easyButton.toggleClass("selected");
     this.classList.toggle("selected");
   }
 });
