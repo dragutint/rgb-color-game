@@ -4,6 +4,7 @@ var isHard = false;
 var timesPlayed = 0;
 var score = 0;
 var sec = 0;
+var interval;
 
 var squares = $(".square");
 var message = $("#message");
@@ -63,6 +64,10 @@ function calcSpeed(prev, next) {
 }
 
 function startGame() {
+  sec = 0;
+  score = 0;
+  timesPlayed = 0;
+
   showSquares();
   newColors();
   message.html("");
@@ -70,7 +75,7 @@ function startGame() {
   addEventListenersToSquares();
   toggleBars();
 
-  setInterval(function () {
+  interval = setInterval(function () {
     $("#seconds").html(pad(++sec % 60));
     $("#minutes").html(pad(parseInt(sec / 60, 10)));
   }, 1000);
@@ -94,30 +99,34 @@ function newColors() {
 
 function addEventListenersToSquares() {
   for (var i = 0; i < squares.length; i++) {
-    $(squares[i]).click(function () {
-      var clickedColor = this.style.backgroundColor;
+    $(squares[i])
+      .off("click")
+      .click(function () {
+        var clickedColor = this.style.backgroundColor;
 
-      if (clickedColor.replace(/\s/g, "") === pickedColor.replace(/\s/g, "")) {
-        message.html("Correct!");
-        timesPlayed++;
-        score += 30;
-        $("#clickCounter").html(score);
+        if (
+          clickedColor.replace(/\s/g, "") === pickedColor.replace(/\s/g, "")
+        ) {
+          message.html("Correct!");
+          timesPlayed++;
+          score += 30;
+          $("#clickCounter").html(score);
 
-        changeSquareColors(pickedColor);
-        h1.css("background-color", pickedColor);
+          changeSquareColors(pickedColor);
+          h1.css("background-color", pickedColor);
 
-        if (timesPlayed == 3) {
-          endGame();
+          if (timesPlayed == 3) {
+            endGame();
+          } else {
+            newColors();
+          }
         } else {
-          newColors();
+          this.style.background = "#232323";
+          score -= 5;
+          $("#clickCounter").html(score);
+          message.html("Try again!");
         }
-      } else {
-        this.style.background = "#232323";
-        score -= 5;
-        $("#clickCounter").html(score);
-        message.html("Try again!");
-      }
-    });
+      });
   }
 }
 
@@ -158,6 +167,11 @@ function endGame() {
         icon: "success",
         confirmButtonText: "Cool",
       });
+
+      score = 0;
+      sec = 0;
+      timesPlayed = 0;
+      clearInterval(interval);
     },
   });
 }
