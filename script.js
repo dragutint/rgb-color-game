@@ -2,7 +2,7 @@ var colors = generateRandomColors(6);
 var pickedColor;
 var isHard = false;
 
-var squares = document.querySelectorAll(".square");
+var squares = $(".square");
 var message = $("#message");
 var colorDisplay = $("#colorDisplay");
 var h1 = $("h1");
@@ -63,7 +63,7 @@ function newColors() {
   }
 
   for (var i = 0; i < squares.length; i++) {
-    squares[i].addEventListener("click", function () {
+    $(squares[i]).click(function () {
       var clickedColor = this.style.backgroundColor;
 
       if (clickedColor.replace(/\s/g, "") === pickedColor.replace(/\s/g, "")) {
@@ -80,17 +80,18 @@ function newColors() {
   }
 
   for (var i = 0; i < colors.length; i++) {
-    squares[i].style.backgroundColor = colors[i];
+    $(squares[i]).css("background-color", colors[i]);
   }
-  pickedColor =
-    squares[randomNumber(0, colors.length - 1)].style.backgroundColor;
+  pickedColor = $(squares[randomNumber(0, colors.length - 1)]).css(
+    "background-color"
+  );
   colorDisplay.html(pickedColor);
   message.html("");
 }
 
 function changeSquareColors(color) {
   for (var i = 0; i < colors.length; i++) {
-    squares[i].style.backgroundColor = color;
+    $(squares[i]).css("background-color", color);
   }
 }
 
@@ -125,8 +126,10 @@ easyButton.click(function () {
   if (isHard) {
     isHard = false;
     newColors();
-    squares[3].style.backgroundColor = squares[4].style.backgroundColor = squares[5].style.backgroundColor =
-      "#232323";
+    $(squares[3]).css("background-color", "#232323");
+    $(squares[4]).css("background-color", "#232323");
+    $(squares[5]).css("background-color", "#232323");
+
     this.classList.toggle("selected");
     hardButton.toggleClass("selected");
   }
