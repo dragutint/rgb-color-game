@@ -1,0 +1,76 @@
+* {
+  font-family: 'Noto Sans', sans-serif;
+  
+}
+
+body {
+  background-color: #232323;
+  margin: 0;
+}
+
+h1{
+  text-align: center;
+  color: white;
+  line-height: 1.1;
+  padding: 20px 0;
+  background: steelblue;
+  margin: 0;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+button {
+  background: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+  height: 100%;
+  color: steelblue;
+  letter-spacing: 2px;
+  font-size: inherit;
+  outline: none;
+}
+
+button:hover {
+  background: steelblue;
+  color: white;
+  border: none;
+}
+
+.naslov{
+  background-color: #0043af;
+}
+
+.selected {
+  background: steelblue;
+  color: white;
+}
+
+#menu{
+  text-align: center;
+  height: 30px;
+  background-color: white;
+  color: black;
+}
+
+#container {
+  margin: 50px auto;
+  max-width: 600px;
+}
+.square {
+  width: 100px;
+  height: 50px;
+  margin: 1.66px;
+  padding-bottom: 50px;
+  border-radius: 25px;
+  position: fixed;
+}
+
+#message{
+  display: inline-block;
+  width: 20%;
+}
+
+#colorDisplay {
+  font-size: 200%;
+}
