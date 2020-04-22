@@ -53,7 +53,7 @@ h1 {
 }
 
 #container {
-  margin: 50px auto;
+  margin: 0px auto;
   max-width: 600px;
 }
 
@@ -78,4 +78,9 @@ h1 {
 #btnPlay {
   background-color: sienna;
   color: white;
+}
+
+#scoreboardTable {
+  color: white;
+  font-weight: 600;
 }

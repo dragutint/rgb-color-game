@@ -27,24 +27,26 @@ include 'backend/scoreboardController.php';
         </a>
     </div>
 
-    <div id="container">
-        <table class="table table-dark">
-            <thead>
-                <th>Name</th>
-                <th>Score</th>
-            </thead>
-            <tbody>
-                <?php
-        foreach ($scores as $s) {
-        ?>
-                <tr>
-                    <td><?php echo $s->getName(); ?></td>
-                    <td><?php echo $s->getScore(); ?></td>
-                </tr>
-                <?php } ?>
+    <div style="background-image: url('src/img/scoreboard-background.jpg');">
+        <div id="container">
+            <table id="scoreboardTable" class="table table-striped table-condensed">
+                <thead>
+                    <th>Name</th>
+                    <th>Score</th>
+                </thead>
+                <tbody>
+                    <?php
+                    foreach ($scores as $s) {
+                    ?>
+                    <tr>
+                        <td><?php echo $s->getName(); ?></td>
+                        <td><?php echo $s->getScore(); ?></td>
+                    </tr>
+                    <?php } ?>
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
     <script type="text/javascript" src="script.js"></script>
 </body>
