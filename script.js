@@ -88,6 +88,8 @@ function startGame() {
 }
 
 function newColors() {
+  showSquares();
+
   if (isHard) {
     colors = generateRandomColors(6);
   } else {
