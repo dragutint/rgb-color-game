@@ -16,8 +16,8 @@ var hardButton = $("#hard");
 var playBar = $("#play-bar");
 var menuBar = $("#menu-bar");
 
-var rightSound = new Audio("SynthChime2.mp3");
-var wrongSound = new Audio("button-10.mp3");
+var rightSound = new Audio("src/sound/right-sound.mp3");
+var wrongSound = new Audio("src/sound/wrong-sound.mp3");
 
 easyButton.addClass("selected");
 
@@ -130,7 +130,7 @@ function addEventListenersToSquares() {
           }
         } else {
           wrongSound.play();
-          this.style.background = "#232323";
+          $(this).addClass("d-none");
           score -= 5;
           $("#clickCounter").html(score);
           message.html("Try again!");
