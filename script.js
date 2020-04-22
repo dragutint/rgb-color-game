@@ -16,6 +16,9 @@ var hardButton = $("#hard");
 var playBar = $("#play-bar");
 var menuBar = $("#menu-bar");
 
+var rightSound = new Audio("SynthChime2.mp3");
+var wrongSound = new Audio("button-10.mp3");
+
 easyButton.addClass("selected");
 
 $(document).ready(function () {
@@ -110,6 +113,7 @@ function addEventListenersToSquares() {
         if (
           clickedColor.replace(/\s/g, "") === pickedColor.replace(/\s/g, "")
         ) {
+          rightSound.play();
           message.html("Correct!");
           round++;
           score += 30;
@@ -125,6 +129,7 @@ function addEventListenersToSquares() {
             newColors();
           }
         } else {
+          wrongSound.play();
           this.style.background = "#232323";
           score -= 5;
           $("#clickCounter").html(score);
