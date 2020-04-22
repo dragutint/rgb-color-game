@@ -215,9 +215,20 @@ function generateRandomColors(num) {
 }
 
 btnPlay.click(function () {
-  h1.css("background-color", "steelblue");
-  startGame();
+  if($('#nameInput').val().trim()==""){
+    Swal.fire({
+      title: "Error",
+      text: "Please enter your name!",
+      icon: "warning",
+      confirmButtonText: "OK",
+    });
+  } else {
+    h1.css("background-color", "steelblue");
+    startGame();
+  }
+
 });
+
 
 easyButton.click(function () {
   if (isHard) {
