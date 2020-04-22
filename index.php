@@ -4,10 +4,11 @@
 <head>
     <title>RGB | GAME</title>
     <?php include 'head-includes.php'; ?>
+    <link rel="icon" href="src/img/icon.png">
 </head>
 
 <body>
-    <h1>
+    <h1 style="background-image:url('src/img/baner.jpg');">
         The Great
         <br />
         <span id="colorDisplay">RGB</span>

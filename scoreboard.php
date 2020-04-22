@@ -9,10 +9,11 @@ include 'backend/scoreboardController.php';
 <head>
     <title>RGB | SCOREBOARD</title>
     <?php include 'head-includes.php'; ?>
+    <link rel="icon" href="src/img/icon.png">
 </head>
 
 <body>
-    <h1>
+<h1 style="background-image:url('src/img/baner.jpg');">
         The Great
         <br />
         <span id="colorDisplay">SCOREBOARD</span>
@@ -27,7 +28,7 @@ include 'backend/scoreboardController.php';
         </a>
     </div>
 
-    <div style="background-image: url('src/img/scoreboard-background.jpg');">
+    <div style="background-image: url('src/img/pozadina.jpg');">
         <div id="container">
             <table id="scoreboardTable" class="table table-striped table-condensed">
                 <thead>
