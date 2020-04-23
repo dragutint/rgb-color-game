@@ -23,7 +23,7 @@
         </a>
     </div>
 
-    <img src="src/img/Uputstvo.png" alt="Instrustions">
+    <img src="src/img/Uputstvo.jpg" alt="Instrustions">
     
     <script type="text/javascript" src="script.js"></script>
 </body>

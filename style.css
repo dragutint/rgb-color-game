@@ -54,8 +54,9 @@ h1 {
 }
 
 #container {
-  margin: 0px auto;
-  max-width: 600px;
+  margin: 20px auto;
+  max-width: 1000px;
+  max-height: 400px;
 }
 
 .square {
@@ -84,4 +85,11 @@ h1 {
 #scoreboardTable {
   color: white;
   font-weight: 600;
+}
+
+#intro{
+  width: 100%;
+  max-height: 100%;
+  align-content: center;
+  margin-top: auto;
 }

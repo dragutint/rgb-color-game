@@ -19,6 +19,8 @@ var menuBar = $("#menu-bar");
 var rightSound = new Audio("src/sound/right-sound.mp3");
 var wrongSound = new Audio("src/sound/wrong-sound.mp3");
 
+var video= document.getElementById("intro");
+
 easyButton.addClass("selected");
 
 $(document).ready(function () {
@@ -225,6 +227,8 @@ btnPlay.click(function () {
   } else {
     h1.css("background-color", "steelblue");
     startGame();
+    video.pause();
+    $('#intro').addClass('d-none');
   }
 
 });
@@ -253,3 +257,5 @@ hardButton.click(function () {
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+

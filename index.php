@@ -52,6 +52,10 @@
     </div>
 
     <div id="container">
+    <video controls width="650" height="500" loop autoplay id="intro">
+    <source src="src/video/movie.mp4" type="video/mp4">
+    </video> 
+
         <div class="square"></div>
         <div class="square"></div>
         <div class="square"></div>
