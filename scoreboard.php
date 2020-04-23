@@ -28,7 +28,9 @@ include 'backend/scoreboardController.php';
         </a>
     </div>
 
-    <div style="background-image: url('src/img/pozadina.jpg');">
+    <img src="src/img/slika1.png" alt="slika1" id="slika1">
+    <img src="src/img/slika2.png" alt="slika2" id="slika2">
+       
         <div id="container">
             <table id="scoreboardTable" class="table table-striped table-condensed">
                 <thead>
