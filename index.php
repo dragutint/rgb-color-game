@@ -17,6 +17,10 @@
     </h1>
 
     <div class="bar" id="menu-bar">
+    <a href="instructions.php"><button class="bar-item bar-button" type="button" name="instructions" id="btnInstructions">
+                INSTRUCTIONS
+            </button>
+        </a>
         <a href="scoreboard.php"><button class="bar-item bar-button" type="button" name="scoreboard" id="btnScoreboard">
                 SCOREBOARD
             </button>

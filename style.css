@@ -26,6 +26,7 @@ h1 {
 }
 
 .bar-item {
+  vertical-align: middle;
   background: none;
   text-transform: uppercase;
   font-weight: 700;
