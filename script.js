@@ -15,13 +15,17 @@ var easyButton = $("#easy");
 var hardButton = $("#hard");
 var playBar = $("#play-bar");
 var menuBar = $("#menu-bar");
-
+var nameInput = $("#nameInput");
 var rightSound = new Audio("src/sound/right-sound.mp3");
 var wrongSound = new Audio("src/sound/wrong-sound.mp3");
 
 var video= document.getElementById("intro");
 
 easyButton.addClass("selected");
+
+window.onload = function() {
+  document.getElementById('nameInput').value = '';
+  }
 
 $(document).ready(function () {
   squares.each(animateDiv);
@@ -180,13 +184,15 @@ function endGame() {
         icon: "success",
         confirmButtonText: "Cool",
       });
-
       score = 0;
       sec = 0;
       round = 0;
-      clearInterval(interval);
+      clearInterval(interval); 
     },
   });
+  colorDisplay.html("rgb");
+  message.html("");
+  document.getElementById('nameInput').value = '';
 }
 
 function changeSquareColors(color) {
