@@ -26,6 +26,10 @@ include 'backend/scoreboardController.php';
                 GAME
             </button>
         </a>
+        <a href="score-rules.php"><button class="bar-item bar-button" type="button">
+                SCORE RULES
+            </button>
+        </a>
     </div>
 
     <img src="src/img/slika1.png" alt="slika1" id="slika1">
