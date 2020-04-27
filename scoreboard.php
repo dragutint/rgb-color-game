@@ -38,6 +38,7 @@ include 'backend/scoreboardController.php';
     <div id="container">
         <table id="scoreboardTable" class="table table-striped table-condensed">
             <thead>
+                <th>Rank</th>
                 <th>Name</th>
                 <th>Score</th>
             </thead>
@@ -46,6 +47,7 @@ include 'backend/scoreboardController.php';
                 foreach ($scores as $s) {
                 ?>
                 <tr>
+                    <td><?php echo $s->getRank(); ?></td>
                     <td><?php echo $s->getName(); ?></td>
                     <td><?php echo $s->getScore(); ?></td>
                 </tr>
