@@ -13,7 +13,7 @@ include 'backend/scoreboardController.php';
 </head>
 
 <body>
-<h1 style="background-image:url('src/img/baner.jpg');">
+    <h1 style="background-image:url('src/img/baner.jpg');">
         The Great
         <br />
         <span id="colorDisplay">SCOREBOARD</span>
@@ -34,26 +34,26 @@ include 'backend/scoreboardController.php';
 
     <img src="src/img/slika1.png" alt="slika1" id="slika1">
     <img src="src/img/slika2.png" alt="slika2" id="slika2">
-       
-        <div id="container">
-            <table id="scoreboardTable" class="table table-striped table-condensed">
-                <thead>
-                    <th>Name</th>
-                    <th>Score</th>
-                </thead>
-                <tbody>
-                    <?php
-                    foreach ($scores as $s) {
-                    ?>
-                    <tr>
-                        <td><?php echo $s->getName(); ?></td>
-                        <td><?php echo $s->getScore(); ?></td>
-                    </tr>
-                    <?php } ?>
 
-                </tbody>
-            </table>
-        </div>
+    <div id="container">
+        <table id="scoreboardTable" class="table table-striped table-condensed">
+            <thead>
+                <th>Name</th>
+                <th>Score</th>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($scores as $s) {
+                ?>
+                <tr>
+                    <td><?php echo $s->getName(); ?></td>
+                    <td><?php echo $s->getScore(); ?></td>
+                </tr>
+                <?php } ?>
+
+            </tbody>
+        </table>
+    </div>
     </div>
     <script type="text/javascript" src="script.js"></script>
 </body>

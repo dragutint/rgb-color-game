@@ -17,7 +17,8 @@
     </h1>
 
     <div class="bar" id="menu-bar">
-    <a href="instructions.php"><button class="bar-item bar-button" type="button" name="instructions" id="btnInstructions">
+        <a href="instructions.php"><button class="bar-item bar-button" type="button" name="instructions"
+                id="btnInstructions">
                 INSTRUCTIONS
             </button>
         </a>
@@ -52,9 +53,9 @@
     </div>
 
     <div id="container">
-    <video controls width="650" height="500" loop autoplay id="intro">
-    <source src="src/video/movie.mp4" type="video/mp4">
-    </video> 
+        <video controls width="650" height="500" loop autoplay id="intro">
+            <source src="src/video/movie.mp4" type="video/mp4">
+        </video>
 
         <div class="square"></div>
         <div class="square"></div>
