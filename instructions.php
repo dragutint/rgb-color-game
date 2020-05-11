@@ -9,7 +9,7 @@
 
 <body>
     <div class="containter">
-        <h1 style="background-image:url('src/img/baner.jpg');">
+        <h1>
             The Great
             <br />
             <span id="colorDisplay">INSTRUCTIONS</span>

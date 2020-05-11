@@ -12,12 +12,21 @@ h1 {
   color: white;
   line-height: 1.1;
   padding: 20px 0;
-  background: steelblue;
+  background-image: url('src/img/logo.png'), url('src/img/baner.jpg');
+  background-repeat: no-repeat;
+  background-size: 120px , 100% ;
+  background-position: 15px 15px, 0px;
   margin: 0;
   font-weight: normal;
   text-transform: uppercase;
 }
 
+#logo {
+  max-width: 30%;
+  max-height: 30%;
+  float: left;
+  position: absolute;
+}
 .bar {
   text-align: center;
   height: 40px;
