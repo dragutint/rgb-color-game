@@ -1,6 +1,4 @@
-[11-May-2020 14:47:24 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/2002): No connection could be made because the target machine actively refused it.
- in C:\xampp\htdocs\rgb-color-game\rgb-color-game\backend\connection.php on line 13
-[11-May-2020 14:47:26 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/2002): No connection could be made because the target machine actively refused it.
- in C:\xampp\htdocs\rgb-color-game\rgb-color-game\backend\connection.php on line 13
-[11-May-2020 14:48:54 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/2002): No connection could be made because the target machine actively refused it.
- in C:\xampp\htdocs\rgb-color-game\rgb-color-game\backend\connection.php on line 13
+[18-May-2020 12:27:40 Europe/Berlin] PHP Notice:  Undefined variable: scores in C:\xampp\htdocs\RGB\scoreboard.php on line 107
+[18-May-2020 12:27:40 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\RGB\scoreboard.php on line 107
+[18-May-2020 12:28:41 Europe/Berlin] PHP Notice:  Undefined variable: scores in C:\xampp\htdocs\RGB\scoreboard.php on line 121
+[18-May-2020 12:28:41 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\RGB\scoreboard.php on line 121

@@ -19,13 +19,13 @@ var nameInput = $("#nameInput");
 var rightSound = new Audio("src/sound/right-sound.mp3");
 var wrongSound = new Audio("src/sound/wrong-sound.mp3");
 
-var video= document.getElementById("intro");
+var video = document.getElementById("intro");
 
 easyButton.addClass("selected");
 
-window.onload = function() {
-  document.getElementById('nameInput').value = '';
-  }
+window.onload = function () {
+  document.getElementById("nameInput").value = "";
+};
 
 $(document).ready(function () {
   squares.each(animateDiv);
@@ -176,6 +176,7 @@ function endGame() {
     data: {
       name: name,
       score: score - sec,
+      level: isHard ? 1 : 0,
     },
     success: function (data) {
       Swal.fire({
@@ -187,12 +188,12 @@ function endGame() {
       score = 0;
       sec = 0;
       round = 0;
-      clearInterval(interval); 
+      clearInterval(interval);
     },
   });
   colorDisplay.html("rgb");
   message.html("");
-  document.getElementById('nameInput').value = '';
+  document.getElementById("nameInput").value = "";
 }
 
 function changeSquareColors(color) {
@@ -223,7 +224,7 @@ function generateRandomColors(num) {
 }
 
 btnPlay.click(function () {
-  if($('#nameInput').val().trim()==""){
+  if ($("#nameInput").val().trim() == "") {
     Swal.fire({
       title: "Error",
       text: "Please enter your name!",
@@ -234,11 +235,9 @@ btnPlay.click(function () {
     h1.css("background-color", "steelblue");
     startGame();
     video.pause();
-    $('#intro').addClass('d-none');
+    $("#intro").addClass("d-none");
   }
-
 });
-
 
 easyButton.click(function () {
   if (isHard) {
@@ -263,5 +262,3 @@ hardButton.click(function () {
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-

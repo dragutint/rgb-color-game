@@ -5,11 +5,13 @@ class Score
     private $name;
     private $score;
     private $rank;
+    private $level;
 
-    public function __construct($name, $score)
+    public function __construct($name, $score, $level)
     {
         $this->name = $name;
         $this->score = $score;
+        $this->level = $level;
     }
 
     public function setName($name)
@@ -40,5 +42,15 @@ class Score
     public function getRank()
     {
         return $this->rank;
+    }
+
+    public function setLevel($level)
+    {
+        $this->level = $level;
+    }
+
+    public function getLevel()
+    {
+        return $this->level;
     }
 }
