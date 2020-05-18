@@ -12,9 +12,9 @@ h1 {
   color: white;
   line-height: 1.1;
   padding: 20px 0;
-  background-image: url('src/img/logo.png'), url('src/img/baner.jpg');
+  background-image: url("src/img/logo.png"), url("src/img/baner.jpg");
   background-repeat: no-repeat;
-  background-size: 120px , 100% ;
+  background-size: 120px, 100%;
   background-position: 15px 15px, 0px;
   margin: 0;
   font-weight: normal;
@@ -65,17 +65,16 @@ h1 {
 #container {
   margin: 20px auto;
   max-width: 700px;
-  
 }
 
-#slika1{
+#slika1 {
   display: inline;
   float: left;
   margin-left: 20px;
   margin-top: 20px;
 }
 
-#slika2{
+#slika2 {
   display: inline;
   float: right;
   margin-right: 80px;
@@ -110,9 +109,15 @@ h1 {
   font-weight: 600;
 }
 
-#intro{
+#intro {
   width: 100%;
   max-height: 100%;
   align-content: center;
   margin-top: auto;
+}
+
+.score-bar {
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }

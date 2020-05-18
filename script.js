@@ -262,3 +262,11 @@ hardButton.click(function () {
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+$(".bar-button-switch").click(function () {
+  $(".bar-button-switch").css("background-color", "white");
+  $(this).css("background-color", "steelblue");
+
+  $(".bar-button-switch").css("color", "steelblue");
+  $(this).css("color", "white");
+});

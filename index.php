@@ -4,7 +4,7 @@
 <head>
     <title>RGB | GAME</title>
     <?php include 'head-includes.php'; ?>
-    <link rel="icon" href="src/img/icon.png"> 
+    <link rel="icon" href="src/img/icon.png">
 </head>
 
 <body>

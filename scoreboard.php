@@ -32,17 +32,17 @@ include 'backend/scoreboardController.php';
         </a>
     </div>
 
-    <nav class="bar">
-        <div class="nav nav-tabs bar" id="menu-bar" role="tablist">
-            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
-                aria-controls="nav-home" aria-selected="true">
-                <button class="bar-item bar-button" type="button">
+    <nav class="bar" style="margin: auto">
+        <div class="nav nav-tabs bar score-bar" role="tablist">
+            <a class="active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home"
+                aria-selected="true">
+                <button class="bar-item bar-button bar-button-switch" type="button">
                     EASY
                 </button>
             </a>
-            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+            <a class="" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
                 aria-controls="nav-profile" aria-selected="false">
-                <button class="bar-item bar-button" type="button">
+                <button class="bar-item bar-button bar-button-switch" type="button">
                     HARD
                 </button>
             </a>
