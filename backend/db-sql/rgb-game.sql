@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2020 at 07:23 PM
+-- Generation Time: May 18, 2020 at 01:17 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -32,20 +32,25 @@ CREATE TABLE `scoreboard` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `score` int(11) NOT NULL,
-  `datetime` timestamp NOT NULL DEFAULT current_timestamp()
+  `datetime` timestamp NOT NULL DEFAULT current_timestamp(),
+  `level` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `scoreboard`
 --
 
-INSERT INTO `scoreboard` (`id`, `name`, `score`, `datetime`) VALUES
-(1, 'IVICA', 82, '2020-04-21 16:49:39'),
-(2, 'IVICA', 44, '2020-04-21 16:56:22'),
-(3, 'IVICA i marica', 63, '2020-04-21 17:13:34'),
-(4, 'IVICA i marica', 69, '2020-04-21 17:16:34'),
-(5, 'IVAN ', 66, '2020-04-21 17:19:14'),
-(6, 'IVAN ', 61, '2020-04-21 17:20:54');
+INSERT INTO `scoreboard` (`id`, `name`, `score`, `datetime`, `level`) VALUES
+(1, 'Milica', 62, '2020-05-18 10:11:41', 0),
+(2, 'Nikola', 82, '2020-05-18 10:19:24', 0),
+(3, 'Ivan', 88, '2020-05-18 10:19:38', 1),
+(4, 'ivan', 69, '2020-05-18 10:37:31', 0),
+(5, 'asd', -49, '2020-05-18 10:47:10', 0),
+(6, 'asf', 54, '2020-05-18 10:47:35', 0),
+(7, 'asfasgas', -36, '2020-05-18 10:51:31', 0),
+(8, 'asdasd', 74, '2020-05-18 10:55:02', 0),
+(9, 'asd', 63, '2020-05-18 10:58:18', 0),
+(10, 'asd', 29, '2020-05-18 11:09:26', 1);
 
 --
 -- Indexes for dumped tables
@@ -65,7 +70,7 @@ ALTER TABLE `scoreboard`
 -- AUTO_INCREMENT for table `scoreboard`
 --
 ALTER TABLE `scoreboard`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
